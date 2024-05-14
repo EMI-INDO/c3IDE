@@ -1,6 +1,6 @@
 "use strict";
 {
-	const SDK = self.SDK;
+	const C3 = globalThis.C3;
 
 	const PLUGIN_CLASS = SDK.Plugins.{{addon_id}};
 	

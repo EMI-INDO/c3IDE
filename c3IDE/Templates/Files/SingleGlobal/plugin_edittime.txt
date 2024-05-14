@@ -1,6 +1,6 @@
 "use strict";
 {
-	const SDK = self.SDK;
+	const C3 = globalThis.C3;
 
 	const PLUGIN_ID = "{{addon_id}}";	
 	const PLUGIN_VERSION = "{{version}}";
@@ -14,12 +14,12 @@
 			
 			SDK.Lang.PushContext("plugins." + PLUGIN_ID.toLowerCase());
 			
-			this._info.SetName(lang(".name"));
-			this._info.SetDescription(lang(".description"));
+			this._info.SetName(globalThis.lang(".name"));
+		        this._info.SetDescription(globalThis.lang(".description"));
 			this._info.SetVersion(PLUGIN_VERSION);
 			this._info.SetCategory(PLUGIN_CATEGORY);
 			this._info.SetAuthor("{{author}}");
-			this._info.SetHelpUrl(lang(".help-url"));
+			this._info.SetHelpUrl(globalThis.lang(".help-url"));
 			this._info.SetIsSingleGlobal(true);
 			this._info.SetCanBeBundled(true);
 

@@ -1,32 +1,45 @@
 "use strict";
 {
-	const C3 = self.C3;
+	const C3 = globalThis.C3;
 
-	C3.Plugins.{{addon_id}}.Instance = class {{class}}Instance extends C3.SDKInstanceBase
+	C3.Plugins.{{addon_id}}.Instance = class {{class}}Instance extends globalThis.ISDKInstanceBase
 	{
-		constructor(inst, properties)
-		{
-			super(inst);
+		constructor()
+        {
+            super();
 			
-			
+			const properties = this._getInitProperties();
 			if (properties)
 			{
 			}
 		}
 		
-		Release()
-		{
-			super.Release();
-		}
+		_release()
+	{
 		
-		SaveToJson()
-		{
-			return {
-				// data to be saved for savegames
-			};
-		}
+		super._release();
+	}
 		
-		LoadFromJson(o)
+		_saveToJson()
+	{
+		return {
+			// data to be saved for savegames
+		};
+	}
+
+
+_setTestProperty(n)
+	{
+		this._testProperty = n;
+	}
+
+
+_getTestProperty()
+	{
+		return this._testProperty;
+	}
+		
+		_loadFromJson(o)
 		{
 			// load state for savegames
 		}

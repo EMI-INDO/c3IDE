@@ -1,21 +1,18 @@
 "use strict";
 {
-	const C3 = self.C3;
+	const C3 = globalThis.C3;
 
-	C3.Plugins.{{addon_id}}.Type = class {{class}}Type extends C3.SDKTypeBase
+	C3.Plugins.{{addon_id}}.Type = class {{class}}Type extends globalThis.ISDKObjectTypeBase
 	{
-		constructor(objectClass)
-		{
-			super(objectClass);
-		}
+		constructor()
+	{
 		
-		Release()
-		{
-			super.Release();
-		}
+		super();
+	}
 		
-		OnCreate()
-		{	
-		}
+		_onCreate()
+	{
+	}
+
 	};
 }
